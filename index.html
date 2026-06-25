@@ -254,7 +254,7 @@ var wpNotesIsJetpackClientV2 = true;
       height: 140px;
       width: auto;
       clip-path: inset(0 100% 0 0);
-      animation: splash-wipe 1.4s ease-in-out 0.3s forwards;
+      animation: splash-wipe 0.9s ease-in-out 0.2s forwards;
     }
     @keyframes splash-wipe {
       0% { clip-path: inset(0 100% 0 0); }
@@ -283,7 +283,7 @@ var wpNotesIsJetpackClientV2 = true;
         document.body.style.overflow = '';
         setTimeout(function(){ splash.remove(); }, 600);
       }
-    }, 2200);
+    }, 1500);
   });
 })();
 </script>
@@ -2065,12 +2065,12 @@ var wpNotesIsJetpackClientV2 = true;
 
     /* Right-side feature panel */
     .swift-commercial-panel {
-      background: linear-gradient(145deg, #0a1c35 0%, #07172f 50%, #0d2240 100%);
+      background: linear-gradient(145deg, #231a14 0%, #1A1410 50%, #2a1f17 100%);
       border-radius: 24px;
       padding: 36px 32px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 32px 64px rgba(7,23,47,0.28);
+      box-shadow: 0 32px 64px rgba(26,20,16,0.35);
     }
     .swift-commercial-panel::before {
       content: "";
@@ -2194,7 +2194,7 @@ var wpNotesIsJetpackClientV2 = true;
       width: 56px; height: 56px;
       display: grid;
       place-items: center;
-      background: #07172f;
+      background: #1A1410;
       border-radius: 16px;
       color: #cf8911;
     }
@@ -2426,7 +2426,7 @@ var wpNotesIsJetpackClientV2 = true;
       font-weight: 900;
       line-height: 1.0;
       letter-spacing: -0.04em;
-      color: #07172f;
+      color: #1A1410;
     }
     .swift-benefits-title-highlight {
       font-style: italic;
@@ -2511,21 +2511,21 @@ var wpNotesIsJetpackClientV2 = true;
     }
     .swift-benefit-ico--outline {
       background: transparent;
-      border: 2.5px solid #07172f;
-      color: #07172f;
+      border: 2.5px solid #1A1410;
+      color: #1A1410;
       box-shadow: none;
     }
     .swift-benefit-item:hover .swift-benefit-ico--outline {
-      background: #07172f;
+      background: #1A1410;
       color: #cf8911;
-      box-shadow: 0 8px 30px rgba(7,23,47,0.3);
+      box-shadow: 0 8px 30px rgba(26,20,16,0.3);
     }
 
     .swift-benefit-item h3 {
       margin: 0 0 4px;
       font-size: 1.05rem;
       font-weight: 800;
-      color: #07172f;
+      color: #1A1410;
       letter-spacing: -0.01em;
     }
     .swift-benefit-item p {
@@ -2540,7 +2540,7 @@ var wpNotesIsJetpackClientV2 = true;
       100% { background-position: 200% 0; }
     }
     .swift-benefit-item:hover h3 {
-      background: linear-gradient(90deg, #07172f 0%, #cf8911 40%, #07172f 80%);
+      background: linear-gradient(90deg, #1A1410 0%, #cf8911 40%, #1A1410 80%);
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -2600,7 +2600,7 @@ var wpNotesIsJetpackClientV2 = true;
     <svg class="swift-benefits-arcs" viewBox="0 0 1320 820" fill="none" xmlns="http://www.w3.org/2000/svg">
       <!-- Outer R=340: top(370,60) → CW through right → bottom(370,740) -->
       <path d="M 370 60 A 340 340 0 0 1 370 740"
-            class="swift-arc-line" stroke="#07172f" stroke-width="3.5" opacity="0.85"
+            class="swift-arc-line" stroke="#1A1410" stroke-width="3.5" opacity="0.85"
             stroke-dasharray="1068" stroke-dashoffset="1068"
             style="animation: arc-dash 1.8s ease-out 0.2s forwards;" />
       <!-- Middle R=250 -->
@@ -2610,37 +2610,37 @@ var wpNotesIsJetpackClientV2 = true;
             style="animation: arc-dash 1.6s ease-out 0.5s forwards;" />
       <!-- Inner R=165 -->
       <path d="M 370 235 A 165 165 0 0 1 370 565"
-            class="swift-arc-line" stroke="#07172f" stroke-width="2" opacity="0.3"
+            class="swift-arc-line" stroke="#1A1410" stroke-width="2" opacity="0.3"
             stroke-dasharray="518" stroke-dashoffset="518"
             style="animation: arc-dash 1.4s ease-out 0.8s forwards;" />
 
       <!-- ALL connectors from OUTER arc (R=340, center 370,400) -->
       <!-- 1: connector from arc to icon edge -->
       <line x1="565" y1="122" x2="588" y2="89"
-            class="swift-connector" stroke="#07172f" stroke-width="2" opacity="0.7"
+            class="swift-connector" stroke="#1A1410" stroke-width="2" opacity="0.7"
             stroke-dasharray="40" stroke-dashoffset="40"
             style="animation: arc-dash 0.5s ease-out 2.0s forwards;" />
       <!-- 2: connector from arc to icon edge -->
       <line x1="690" y1="284" x2="729" y2="270"
-            class="swift-connector" stroke="#07172f" stroke-width="2" opacity="0.7"
+            class="swift-connector" stroke="#1A1410" stroke-width="2" opacity="0.7"
             stroke-dasharray="42" stroke-dashoffset="42"
             style="animation: arc-dash 0.5s ease-out 2.2s forwards;" />
       <!-- 3: connector from arc to icon edge -->
       <line x1="690" y1="516" x2="729" y2="530"
-            class="swift-connector" stroke="#07172f" stroke-width="2" opacity="0.7"
+            class="swift-connector" stroke="#1A1410" stroke-width="2" opacity="0.7"
             stroke-dasharray="42" stroke-dashoffset="42"
             style="animation: arc-dash 0.5s ease-out 2.4s forwards;" />
       <!-- 4: connector from arc to icon edge -->
       <line x1="565" y1="678" x2="588" y2="711"
-            class="swift-connector" stroke="#07172f" stroke-width="2" opacity="0.7"
+            class="swift-connector" stroke="#1A1410" stroke-width="2" opacity="0.7"
             stroke-dasharray="40" stroke-dashoffset="40"
             style="animation: arc-dash 0.5s ease-out 2.6s forwards;" />
 
       <!-- Junction dots — all on outer arc -->
-      <circle cx="565" cy="122" r="4.5" class="swift-junction" fill="#07172f" opacity="0.85" />
-      <circle cx="690" cy="284" r="4.5" class="swift-junction" fill="#07172f" opacity="0.85" />
-      <circle cx="690" cy="516" r="4.5" class="swift-junction" fill="#07172f" opacity="0.85" />
-      <circle cx="565" cy="678" r="4.5" class="swift-junction" fill="#07172f" opacity="0.85" />
+      <circle cx="565" cy="122" r="4.5" class="swift-junction" fill="#1A1410" opacity="0.85" />
+      <circle cx="690" cy="284" r="4.5" class="swift-junction" fill="#1A1410" opacity="0.85" />
+      <circle cx="690" cy="516" r="4.5" class="swift-junction" fill="#1A1410" opacity="0.85" />
+      <circle cx="565" cy="678" r="4.5" class="swift-junction" fill="#1A1410" opacity="0.85" />
     </svg>
 
     <article class="swift-benefit-item swift-benefit-item--1">
