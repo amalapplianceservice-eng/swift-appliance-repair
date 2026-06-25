@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/REFRIGERATOR.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/DISHWASHER.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/OVEN.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/STOVE.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/WASHER.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swift-appliancerepair.com/DRYER.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>
