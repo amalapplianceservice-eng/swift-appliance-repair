@@ -336,6 +336,7 @@ var wpNotesIsJetpackClientV2 = true;
       top: 0;
       z-index: 9990;
       width: auto;
+      margin-block-start: 0 !important;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
       background: rgba(255,255,255,0.96);
@@ -360,7 +361,7 @@ var wpNotesIsJetpackClientV2 = true;
     .swift-header-wrap {
       max-width: 1320px;
       margin: 0 auto;
-      padding: 14px 24px;
+      padding: 8px 24px;
     }
 
     .swift-header-bar {
@@ -368,7 +369,7 @@ var wpNotesIsJetpackClientV2 = true;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      min-height: 72px;
+      min-height: 0;
     }
 
     .swift-header-logo-link {
@@ -381,7 +382,7 @@ var wpNotesIsJetpackClientV2 = true;
 
     .swift-header-logo {
       width: auto;
-      height: 54px;
+      height: 52px;
       display: block;
       object-fit: contain;
     }
@@ -506,8 +507,8 @@ var wpNotesIsJetpackClientV2 = true;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 16px;
+      min-height: 38px;
+      padding: 0 14px;
       border-radius: 999px;
       border: 1px solid rgba(17,17,17,0.1);
       background: #ffffff;
@@ -531,9 +532,9 @@ var wpNotesIsJetpackClientV2 = true;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 168px;
-      min-height: 48px;
-      padding: 14px 22px;
+      min-width: 148px;
+      min-height: 38px;
+      padding: 10px 18px;
       border: 0;
       border-radius: 999px;
       background: #cf8911;
@@ -773,11 +774,11 @@ var wpNotesIsJetpackClientV2 = true;
 
     @media (max-width: 640px) {
       .swift-header-wrap {
-        padding: 12px 16px;
+        padding: 6px 16px;
       }
 
       .swift-header-bar {
-        min-height: 64px;
+        min-height: 0;
       }
 
       .swift-header-logo {
@@ -1452,6 +1453,13 @@ var wpNotesIsJetpackClientV2 = true;
       border-color: rgba(207,137,17,0.7);
       box-shadow: 0 0 0 4px rgba(207,137,17,0.12);
     }
+    select.swift-order-input {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23111' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 18px center;
+      padding-right: 42px;
+      cursor: pointer;
+    }
 
     .swift-order-submit {
       margin-top: 6px;
@@ -1581,7 +1589,7 @@ var wpNotesIsJetpackClientV2 = true;
               <input type="text" id="heroOtherIssue" name="other_issue" placeholder="Describe your issue">
             </div>
             <button type="submit" class="swift-hero-form-submit">Book My Repair</button>
-            <p class="swift-hero-form-note">Backed by our 90-day labor warranty. By clicking, you agree to our <a href="privacy_policy.html">Privacy Policy</a>.</p>
+            <p class="swift-hero-form-note">Backed by our 90-day labor warranty. By clicking, you agree to our <a href="privacy_policy.html">Privacy Policy</a> & <a href="terms_of_use.html">Terms of Use</a>.</p>
             <div class="swift-hero-form-status" id="heroFormStatus"></div>
           </form>
         </aside>
@@ -1613,11 +1621,25 @@ var wpNotesIsJetpackClientV2 = true;
       </div>
       <div class="swift-order-field">
         <label class="swift-order-label" for="swiftOrderAddress">Zip Code</label>
-        <input class="swift-order-input" type="text" id="swiftOrderAddress" name="address" placeholder="Service address" required="" data-required-message="Please enter your address.">
+        <input class="swift-order-input" type="text" id="swiftOrderAddress" name="address" placeholder="Your zip code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required="" data-required-message="Please enter your zip code.">
       </div>
       <div class="swift-order-field">
-        <label class="swift-order-label" for="swiftOrderAppliance">Type of appliance</label>
-        <input class="swift-order-input" type="text" id="swiftOrderAppliance" name="appliance_type" placeholder="Refrigerator, oven, washer..." required="" data-required-message="Please enter the type of appliance.">
+        <label class="swift-order-label" for="swiftOrderAppliance">Type of Service</label>
+        <select class="swift-order-input" id="swiftOrderAppliance" name="appliance_type" required="" data-required-message="Please select a service.">
+          <option value="" selected disabled>Select a service</option>
+          <option>Refrigerator</option>
+          <option>Washer</option>
+          <option>Dryer</option>
+          <option>Oven / Range</option>
+          <option>Dishwasher</option>
+          <option>Stove / Cooktop</option>
+          <option>Commercial Equipment</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="swift-order-field" id="popupOtherWrap" style="display:none">
+        <label class="swift-order-label" for="swiftOrderOther">Please specify your issue</label>
+        <input class="swift-order-input" type="text" id="swiftOrderOther" name="other_issue" placeholder="Describe your issue">
       </div>
 
       <button class="swift-order-submit" type="submit" id="swiftOrderSubmit">Schedule Repair</button>
@@ -1665,6 +1687,14 @@ var wpNotesIsJetpackClientV2 = true;
       function showStatus(type, text) {
         statusBox.className = "swift-order-status show " + type;
         statusBox.textContent = text;
+      }
+
+      var popupSelect = section.querySelector("#swiftOrderAppliance");
+      var popupOtherWrap = section.querySelector("#popupOtherWrap");
+      if (popupSelect) {
+        popupSelect.addEventListener("change", function(){
+          popupOtherWrap.style.display = popupSelect.value === "Other" ? "" : "none";
+        });
       }
 
       if (openBtn) openBtn.addEventListener("click", openPopup);
@@ -1722,9 +1752,11 @@ var wpNotesIsJetpackClientV2 = true;
             name: form.name.value.trim(),
             phone: form.phone.value.trim(),
             address: form.address.value.trim(),
-            appliance_type: form.appliance_type.value.trim(),
+            appliance_type: form.appliance_type.value,
             page_url: window.location.href
           };
+          var popupOtherVal = (form.other_issue ? form.other_issue.value : '').trim();
+          if(popupOtherVal) payload.issue_details = popupOtherVal;
 
           try {
             const delivery = { telegram: false, email: false, errors: [] };
