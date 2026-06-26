@@ -1225,55 +1225,111 @@ var wpNotesIsJetpackClientV2 = true;
       justify-content: flex-end;
     }
 
-    .swift-hero-image-shell {
-      position: relative;
-      width: min(100%, 660px);
-      aspect-ratio: 0.95 / 1;
-      border-radius: 32px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    .swift-hero-form-card {
+      width: min(100%, 480px);
+      background: #fff;
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.25);
+      scroll-margin-top: 100px;
     }
-
-    .swift-hero-image-shell::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 32px;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(207,137,17,0.45), rgba(255,255,255,0.06));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    .swift-hero-image {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .swift-hero-badge {
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
-      padding: 12px 16px;
-      border-radius: 18px;
-      background: rgba(17,17,17,0.8);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #ffffff;
-      font-size: 14px;
-      line-height: 1.4;
-      backdrop-filter: blur(8px);
-    }
-
-    .swift-hero-badge strong {
-      color: #cf8911;
+    .swift-hero-form-card h2 {
+      font-size: 1.45rem;
       font-weight: 800;
+      color: #1A1410;
+      margin: 0 0 4px;
+    }
+    .swift-hero-form-sub {
+      color: rgba(26,20,16,0.5);
+      font-size: 0.92rem;
+      margin: 0 0 22px;
+    }
+    .swift-hero-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .swift-hero-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .swift-hero-field label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #1A1410;
+    }
+    .swift-hero-form-card .swift-hero-field input,
+    .swift-hero-form-card .swift-hero-field select {
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(26,20,16,0.35) !important;
+      border-radius: 12px;
+      background: #fff !important;
+      color: #1A1410;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .swift-hero-form-card .swift-hero-field select {
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A1410' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center !important;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+    .swift-hero-form-card .swift-hero-field input:focus,
+    .swift-hero-form-card .swift-hero-field select:focus {
+      outline: none;
+      border-color: #cf8911 !important;
+      box-shadow: 0 0 0 3px rgba(207,137,17,0.15);
+      background: #fff !important;
+    }
+    .swift-hero-form-submit {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      background: #cf8911;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 2px;
+    }
+    .swift-hero-form-submit:hover {
+      background: #b87a0e;
+      transform: translateY(-1px);
+    }
+    .swift-hero-form-note {
+      font-size: 0.75rem;
+      color: rgba(26,20,16,0.45);
+      text-align: center;
+      margin: 0;
+    }
+    .swift-hero-form-note a {
+      color: #cf8911;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .swift-hero-form-status {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 8px;
+      border-radius: 8px;
+      display: none;
+    }
+    .swift-hero-form-status.--ok {
+      display: block;
+      background: rgba(46,139,87,0.1);
+      color: #2e8b57;
+    }
+    .swift-hero-form-status.--err {
+      display: block;
+      background: rgba(200,50,50,0.1);
+      color: #c83232;
     }
 
     .swift-popup-overlay {
@@ -1452,7 +1508,7 @@ var wpNotesIsJetpackClientV2 = true;
       .swift-hero-grid { grid-template-columns: 1fr; gap: 32px; min-height: auto; }
       .swift-hero-content { max-width: 100%; }
       .swift-hero-visual { justify-content: center; }
-      .swift-hero-image-shell { width: 100%; max-width: 760px; aspect-ratio: 1.15 / 1; }
+      .swift-hero-form-card { width: 100%; max-width: 480px; }
     }
 
     @media (max-width: 767px) {
@@ -1463,8 +1519,7 @@ var wpNotesIsJetpackClientV2 = true;
       .swift-hero-actions { flex-direction: column; align-items: stretch; }
       .swift-hero-btn { width: 100%; min-width: 0; }
       .swift-hero-note { font-size: 13px; }
-      .swift-hero-image-shell { aspect-ratio: 1 / 1.02; border-radius: 24px; }
-      .swift-hero-badge { left: 14px; right: 14px; bottom: 14px; font-size: 13px; }
+      .swift-hero-form-card { padding: 28px 22px; border-radius: 20px; }
       .swift-popup { width: calc(100vw - 24px); padding: 22px 16px 18px; border-radius: 22px; }
       .swift-popup-close { width: 38px; height: 38px; min-width: 38px; }
       .swift-order-input { min-height: 52px; padding: 14px 16px; border-radius: 14px; }
@@ -1490,14 +1545,46 @@ var wpNotesIsJetpackClientV2 = true;
         </div>
       </div>
 
-      <div class="swift-hero-visual">
-        <div class="swift-hero-image-shell">
-          <img class="swift-hero-image" src="master.png" alt="Swift Appliance Repair hero image">
-          <div class="swift-hero-badge">
-            <strong>Residential &amp; Commercial</strong><br>
-            Professional appliance repair service
-          </div>
-        </div>
+      <div class="swift-hero-visual" id="book">
+        <aside class="swift-hero-form-card">
+          <h2>Get your appliance fixed</h2>
+          <p class="swift-hero-form-sub">Share a few details and we'll schedule your visit.</p>
+          <form class="swift-hero-form" id="swiftHeroForm" novalidate>
+            <div class="swift-hero-field">
+              <label for="heroName">Name</label>
+              <input type="text" id="heroName" name="name" placeholder="Your name" autocomplete="name" required>
+            </div>
+            <div class="swift-hero-field">
+              <label for="heroPhone">Phone</label>
+              <input type="tel" id="heroPhone" name="phone" placeholder="Your phone number" autocomplete="tel" required>
+            </div>
+            <div class="swift-hero-field">
+              <label for="heroZip">Zip Code</label>
+              <input type="text" id="heroZip" name="zip" placeholder="Your zip code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required>
+            </div>
+            <div class="swift-hero-field">
+              <label for="heroAppliance">Type of Service</label>
+              <select id="heroAppliance" name="appliance" required>
+                <option value="" selected disabled>Select a service</option>
+                <option>Refrigerator</option>
+                <option>Washer</option>
+                <option>Dryer</option>
+                <option>Oven / Range</option>
+                <option>Dishwasher</option>
+                <option>Stove / Cooktop</option>
+                <option>Commercial Equipment</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="swift-hero-field" id="heroOtherWrap" style="display:none">
+              <label for="heroOtherIssue">Please specify your issue</label>
+              <input type="text" id="heroOtherIssue" name="other_issue" placeholder="Describe your issue">
+            </div>
+            <button type="submit" class="swift-hero-form-submit">Book My Repair</button>
+            <p class="swift-hero-form-note">Backed by our 90-day labor warranty. By clicking, you agree to our <a href="privacy_policy.html">Privacy Policy</a>.</p>
+            <div class="swift-hero-form-status" id="heroFormStatus"></div>
+          </form>
+        </aside>
       </div>
     </div>
   </div>
@@ -1722,6 +1809,65 @@ var wpNotesIsJetpackClientV2 = true;
         });
       }
     })();
+  </script>
+
+  <script>
+  (function(){
+    var form = document.getElementById('swiftHeroForm');
+    var status = document.getElementById('heroFormStatus');
+    var selectEl = document.getElementById('heroAppliance');
+    var otherWrap = document.getElementById('heroOtherWrap');
+    if(!form) return;
+    selectEl.addEventListener('change', function(){
+      otherWrap.style.display = selectEl.value === 'Other' ? '' : 'none';
+    });
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      status.className = 'swift-hero-form-status';
+      status.textContent = '';
+      var btn = form.querySelector('.swift-hero-form-submit');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      var payload = {
+        name: form.querySelector('[name=name]').value.trim(),
+        phone: form.querySelector('[name=phone]').value.trim(),
+        address: form.querySelector('[name=zip]').value.trim(),
+        appliance_type: form.querySelector('[name=appliance]').value,
+        page_url: window.location.href
+      };
+      var otherVal = (form.querySelector('[name=other_issue]').value || '').trim();
+      if(otherVal) payload.issue_details = otherVal;
+      try {
+        var ok = false;
+        try {
+          await fetch("https://hook.eu2.make.com/7ms1a6ec3dtyoqiohc5bi2xstdjf2oi0", {
+            method:"POST", mode:"no-cors",
+            headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+            body: new URLSearchParams(Object.assign({}, payload, {source:"swift-site-hero", sent_at: new Date().toISOString()})).toString()
+          });
+          ok = true;
+        } catch(e){}
+        try {
+          var r = await fetch("https://formsubmit.co/ajax/office.swiftappliance@gmail.com", {
+            method:"POST",
+            headers:{"Content-Type":"application/json","Accept":"application/json"},
+            body: JSON.stringify(Object.assign({}, payload, {_subject:"New Swift Repair request (hero form)", _cc:"zhenya.yachmenevcr7@gmail.com", _captcha:"false", _template:"table"}))
+          });
+          if(r.ok) ok = true;
+        } catch(e){}
+        if(!ok) throw new Error("Unable to send. Please call (510) 479-0935.");
+        status.className = 'swift-hero-form-status --ok';
+        status.textContent = 'Thank you! We\'ll be in touch shortly.';
+        form.reset();
+      } catch(err) {
+        status.className = 'swift-hero-form-status --err';
+        status.textContent = err.message || 'Something went wrong. Please try again.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Book My Repair';
+      }
+    });
+  })();
   </script>
 </section>
 
